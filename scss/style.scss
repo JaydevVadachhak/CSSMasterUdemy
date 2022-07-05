@@ -1,3 +1,9 @@
+$primary-color: #55c57a;
+$primary-color-light: #7ed56f;
+$primary-color-dark: #28b485;
+$color-dark-gray: #777;
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
@@ -10,15 +16,19 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  /* font-size: 62.5%; */
   line-height: 1.7;
-  color: #777;
+  color: $color-dark-gray;
   padding: 30px;
 }
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.816)), url(../img/hero.jpg);
+  background-image: linear-gradient(
+      to right,
+      rgba($primary-color-light, 0.8),
+      rgba($primary-color-dark, 0.816)
+    ),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -26,17 +36,17 @@ body {
   position: relative;
 }
 
-.header-logo-box {
+.logo-box {
   position: absolute;
   top: 2.5rem;
   left: 2.5rem;
 }
 
-.header-logo {
+.logo {
   height: 2rem;
 }
 
-.header-text-box {
+.text-box {
   position: absolute;
   text-align: center;
   top: 40%;
@@ -45,7 +55,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 2.75rem;
@@ -71,53 +81,59 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-6.5rem);
+    transform: translateX(-100px);
   }
+
   80% {
-    transform: translateX(0.5rem);
+    transform: translateX(10px);
   }
+
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
+
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(6.5rem);
+    transform: translateX(100px);
   }
+
   80% {
-    transform: translateX(-0.5rem);
+    transform: translateX(-10px);
   }
+
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 2.5rem;
+  padding: 15px 40px;
   display: inline-block;
-  border-radius: 6.5rem;
+  border-radius: 100px;
   transition: all 0.2s;
   position: relative;
 }
 
 .btn-white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-dark-gray;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0.5rem 1.25rem rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.25rem 0.5rem rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.2);
 }
 
 .btn::after {
@@ -125,16 +141,16 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 6.5rem;
+  border-radius: 100px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   z-index: -1;
   transition: all 0.4s;
 }
 
 .btn-white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
@@ -150,8 +166,9 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(6.5rem);
+    transform: translateY(100px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
