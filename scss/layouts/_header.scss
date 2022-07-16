@@ -10,6 +10,7 @@
   background-position: top;
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   position: relative;
 
   &-logo-box {

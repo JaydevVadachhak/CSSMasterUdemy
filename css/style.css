@@ -170,6 +170,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   position: relative;
 }
 .header-logo-box {
@@ -266,12 +267,13 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.15);
   transition: all 0.8s ease;
+  overflow: hidden;
 }
 .card-side-front {
-  background-color: wheat;
+  background-color: #fff;
   transform: rotateY(0deg);
 }
 .card-side-back {
@@ -286,8 +288,65 @@ body {
 .card-side-back-3 {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
 }
+.card-picture {
+  background-size: cover;
+  height: 15rem;
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card-picture-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+}
+.card-picture-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+}
+.card-picture-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
+.card-heading {
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 8.5rem;
+  right: 1rem;
+  text-align: right;
+  width: 75%;
+}
+.card-heading-span {
+  padding: 0.5rem 1rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.card-heading-span-1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+.card-heading-span-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card-heading-span-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.card-details {
+  padding: 1.8rem;
+}
+.card-details ul {
+  list-style-type: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card-details ul li {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.card-details ul li:not(:last-child) {
+  border-bottom: 1px solid #f7f7f7;
+}
 .card:hover .card-side-front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .card:hover .card-side-back {
   transform: rotateY(0deg);
@@ -331,7 +390,7 @@ body {
   font-size: 1rem;
   padding: 2rem;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 20px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
   transition: transform 0.2s;
 }
