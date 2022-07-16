@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 .btn {
   &:link,
   &:visited {
@@ -8,6 +10,7 @@
     border-radius: 6.25rem;
     transition: all 0.2s;
     position: relative;
+    // font-size: $default-font-size;
   }
 
   &-white {
@@ -50,5 +53,30 @@
   &-animated {
     animation: moveInBottom 1.5s ease-out 0.75s;
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $primary-color;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $primary-color;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+    color: $color-white;
+    box-shadow: 0px 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0px 0.5rem 1rem rgba($color-black, 0.15);
   }
 }

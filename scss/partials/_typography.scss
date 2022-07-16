@@ -1,3 +1,5 @@
+@import "../abstracts/variables";
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -48,5 +50,19 @@ body {
   &:hover {
     transform: skewY(2deg) skewX(5deg);
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
   }
 }
