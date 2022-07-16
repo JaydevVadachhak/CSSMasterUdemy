@@ -22,6 +22,15 @@
     }
   }
 
+  &-green {
+    background-color: $primary-color;
+    color: $color-white;
+
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 0.5rem 1.25rem rgb($color-black, 0.2);
