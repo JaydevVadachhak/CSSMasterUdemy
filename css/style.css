@@ -138,29 +138,29 @@ body {
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
-  margin-right: 1.5rem;
+  margin-right: 3.5rem;
 }
 .row .col-1-of-2 {
-  width: calc((100% - 1.5rem) / 2);
+  width: calc((100% - 3.5rem) / 2);
 }
 .row .col-1-of-3 {
-  width: calc((100% - 1.5rem * 2) / 3);
+  width: calc((100% - 3.5rem * 2) / 3);
 }
 .row .col-2-of-3 {
   width: calc(
-      2 * ((100% - 1.5rem * 2) / 3) + 1.5rem
+      2 * ((100% - 3.5rem * 2) / 3) + 3.5rem
     );
 }
 .row .col-1-of-4 {
-  width: calc((100% - 1.5rem * 3) / 4);
+  width: calc((100% - 3.5rem * 3) / 4);
 }
 .row .col-3-of-4 {
   width: calc(
-      2 * ((100% - 1.5rem * 3) / 4) + 1.5rem
+      2 * ((100% - 3.5rem * 3) / 4) + 3.5rem
     );
 }
 .row .col-2-of-4 {
-  width: calc(3 * (100% - 1.5rem * 3) / 4 + 2 * (1.5rem));
+  width: calc(3 * (100% - 3.5rem * 3) / 4 + 2 * (3.5rem));
 }
 
 .header {
@@ -253,6 +253,46 @@ body {
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.card {
+  perspective: 130rem;
+  -moz-perspective: 130rem;
+  height: 32rem;
+  position: relative;
+}
+.card-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.15);
+  transition: all 0.8s ease;
+}
+.card-side-front {
+  background-color: wheat;
+  transform: rotateY(0deg);
+}
+.card-side-back {
+  transform: rotateY(180deg);
+}
+.card-side-back-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.card-side-back-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card-side-back-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.card:hover .card-side-front {
+  transform: rotateY(180deg);
+}
+.card:hover .card-side-back {
+  transform: rotateY(0deg);
+}
+
 .composition {
   position: relative;
 }
@@ -323,4 +363,10 @@ body {
 }
 .section-features > * {
   transform: skewY(7deg);
+}
+
+.section-plans {
+  background-color: #f7f7f7;
+  padding: 18rem 0;
+  margin-top: -8rem;
 }
