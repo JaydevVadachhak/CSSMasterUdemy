@@ -40,6 +40,52 @@ body {
   animation: moveInRight 1.5s;
 }
 
+.heading-secondary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(5deg);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 3rem;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1rem;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 6rem;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -78,7 +124,6 @@ body {
 }
 .row {
   max-width: 71.25rem;
-  background-color: #eee;
   margin: 0 auto;
 }
 .row:not(:last-child) {
@@ -90,7 +135,6 @@ body {
   clear: both;
 }
 .row [class^=col-] {
-  background-color: #7ed56f;
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
@@ -187,4 +231,63 @@ body {
 .btn-animated {
   animation: moveInBottom 1.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.2rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s;
+}
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+.btn-text:active {
+  transform: translateY(0);
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.composition {
+  position: relative;
+}
+.composition-photo {
+  width: 55%;
+  box-shadow: 0px 1rem 3.5rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.2s;
+  outline-offset: 1rem;
+}
+.composition-photo-p1 {
+  left: 2rem;
+  top: -2rem;
+}
+.composition-photo-p2 {
+  right: -2rem;
+  top: 2rem;
+}
+.composition-photo-p3 {
+  top: 9rem;
+  left: 20%;
+}
+.composition-photo:hover {
+  outline: 3px solid #55c57a;
+  transform: scale(1.2) translateY(-0.5rem);
+  z-index: 1;
+  box-shadow: 0px 1.5rem 3.5rem rgba(0, 0, 0, 0.5);
+}
+.composition:hover .composition-photo:not(:hover) {
+  transform: scale(0.95);
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 23rem 0;
+  margin-top: -25vh;
 }
