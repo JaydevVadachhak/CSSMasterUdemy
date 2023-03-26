@@ -240,6 +240,121 @@ body {
   float: right;
 }
 
+.navigation__checkbox {
+  display: none;
+}
+.navigation__button {
+  background-color: #fff;
+  height: 4rem;
+  width: 4rem;
+  position: fixed;
+  top: 2.8rem;
+  right: 2.8rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+.navigation__background {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 1000;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  transition: all 0.8s;
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 0.8rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 250%;
+  transition: all 0.5s;
+}
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(100);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 1.9rem;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 1.8rem;
+  height: 2px;
+  background-color: #999;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.5rem;
+}
+.navigation__icon::after {
+  top: 0.5rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -0.6rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 0.6rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -633,6 +748,78 @@ body {
 }
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1;
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2100;
+  display: 0;
+  transform: scale(0);
+  visibility: hidden;
+  transition: all 0.8s;
+}
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 70%;
+  height: 50%;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: table;
+  overflow: hidden;
+}
+.popup__left {
+  display: table-cell;
+  width: 30%;
+}
+.popup__right {
+  display: table-cell;
+  vertical-align: middle;
+  width: 70%;
+  padding: 2rem;
+}
+.popup__image {
+  display: block;
+  width: 100%;
+}
+.popup__text {
+  font-size: 1rem;
+  -moz-column-count: 2;
+  -moz-column-gap: 2rem;
+  -moz-column-rule: 2px solid #f7f7f7;
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 2px solid #f7f7f7;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.popup__close:link, .popup__close:visited {
+  text-decoration: none;
+  color: #777;
+  position: absolute;
+  display: inline-block;
+  top: 1rem;
+  right: 1rem;
+  transition: all 0.2s;
+  font-size: 1.5rem;
+}
+.popup__close:hover {
+  color: #55c57a;
 }
 
 .section-about {
