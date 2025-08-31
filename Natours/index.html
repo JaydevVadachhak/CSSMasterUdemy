@@ -11,7 +11,11 @@
 
     <link rel="stylesheet" href="/css/Natours/icon-font.css" />
     <link rel="stylesheet" href="/css/Natours/scss/style.css" />
-    <link rel="shortcut icon" type="image/png" href="/assets/Natours/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/Natours/img/favicon.png"
+    />
 
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
@@ -95,17 +99,17 @@
             <div class="composition">
               <img
                 src="/assets/Natours/img/nat-1-large.jpg"
-                alt="Photo 1"
+                alt="1"
                 class="composition-photo composition-photo-p1"
               />
               <img
                 src="/assets/Natours/img/nat-2-large.jpg"
-                alt="Photo 2"
+                alt="2"
                 class="composition-photo composition-photo-p2"
               />
               <img
                 src="/assets/Natours/img/nat-3-large.jpg"
-                alt="Photo 3"
+                alt="3"
                 class="composition-photo composition-photo-p3"
               />
             </div>
@@ -273,9 +277,19 @@
 
       <section class="section-stories">
         <div class="bg-video">
-          <video class="bg-video_content" autoplay muted loop>
+          <video
+            class="bg-video__content"
+            autoplay
+            muted
+            loop
+            aria-label="Background video showing nature scenes"
+          >
             <source src="/assets/Natours/img/video.mp4" type="video/mp4" />
             <source src="/assets/Natours/img/video.webm" type="video/webm" />
+            <track
+              kind="descriptions"
+              src="/assets/Natours/img/video-description.vtt"
+            />
             Your Browser is not supported!
           </video>
         </div>
@@ -399,7 +413,11 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="/assets/Natours/img/logo-green-2x.png" alt="Full Logo" class="footer__logo" />
+        <img
+          src="/assets/Natours/img/logo-green-2x.png"
+          alt="Full Logo"
+          class="footer__logo"
+        />
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -437,8 +455,16 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="/assets/Natours/img/nat-8.jpg" alt="Tour Photo" class="popup__image" />
-          <img src="/assets/Natours/img/nat-9.jpg" alt="Tour Photo" class="popup__image" />
+          <img
+            src="/assets/Natours/img/nat-8.jpg"
+            alt="Tour"
+            class="popup__image"
+          />
+          <img
+            src="/assets/Natours/img/nat-9.jpg"
+            alt="Tour"
+            class="popup__image"
+          />
         </div>
         <div class="popup__right">
           <a href="#section__plans" class="popup__close">&times;</a>
@@ -461,7 +487,6 @@
         </div>
       </div>
     </div>
-
     <!-- <section class="grid-test">
       <div class="row">
         <div class="col-1-of-2">Col 1 of 2</div>
