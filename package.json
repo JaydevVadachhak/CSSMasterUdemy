@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp",
-    "build": "gulp buildStyles"
+    "build": "gulp buildStyles",
+    "start": "http-server -a localhost -p 3000"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "dependencies": {
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
+    "http-server": "^14.1.1",
     "sass": "^1.53.0"
   }
 }

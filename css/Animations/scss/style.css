@@ -1,0 +1,200 @@
+body {
+  background: url("/assets/Animations/img/bg.jpg") repeat;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 2px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  background: white;
+  border-radius: 18px;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.card-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.card-link:hover::before {
+  left: 100%;
+}
+
+.card-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.card-arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover .card-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card-content {
+    padding: 2rem;
+  }
+}
+.polaroid-gallery {
+  text-align: center;
+}
+
+.polaroid-gallery-title {
+  font-size: 32px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+.polaroid-card {
+  display: inline-block;
+  background-color: #eee6d8;
+  padding: 10px;
+  box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.polaroid-card-caption {
+  text-align: center;
+  font-family: "Marker Felt", sans-serif;
+  font-size: 12px;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+.polaroid-card:nth-of-type(even) {
+  transform: rotate(12deg);
+}
+
+.polaroid-card:nth-of-type(odd) {
+  transform: rotate(-12deg);
+}
+
+.polaroid-card:nth-of-type(even)::before {
+  content: "";
+  display: block;
+  background-color: rgba(222, 220, 200, 0.66);
+  width: 100px;
+  height: 25px;
+  transform: rotate(-24deg) translate(-30px, -25px);
+}
+
+.polaroid-card:nth-of-type(odd)::before {
+  content: "";
+  display: block;
+  background-color: rgba(222, 220, 200, 0.66);
+  width: 100px;
+  height: 25px;
+  transform: translate(140px, -5px) rotate(25deg);
+}
+
+.polaroid-card:hover {
+  transform: scale(1.5);
+}
