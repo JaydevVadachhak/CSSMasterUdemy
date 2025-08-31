@@ -2,3 +2,4 @@ node_modules
 *.pdf
 .vscode
 starterTemplates
+cursor_prompt.md

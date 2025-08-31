@@ -1,0 +1,482 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.buttons-gallery {
+  padding: 2rem;
+  text-align: center;
+}
+
+.buttons-gallery-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.button-item {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 200px;
+  position: relative;
+}
+
+.button-item:hover {
+  transform: translateY(-5px);
+}
+
+.demo-area {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.button-label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  outline: none;
+}
+
+.btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.ripple-btn {
+  background: #3498db;
+  color: white;
+  position: relative;
+}
+
+.ripple-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  transform: translate(-50%, -50%);
+}
+
+.ripple-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.ripple-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+.magnetic-btn {
+  background: #e74c3c;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(231, 76, 60, 0.4);
+  background: #c0392b;
+}
+
+.liquid-btn {
+  background: transparent;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  position: relative;
+}
+
+.liquid-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #2ecc71;
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.liquid-btn:hover::before {
+  left: 0;
+}
+
+.liquid-btn:hover {
+  color: white;
+}
+
+.pulse-btn {
+  background: #9b59b6;
+  color: white;
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+.pulse-btn:hover {
+  animation-play-state: paused;
+  transform: scale(1.05);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px #9b59b6;
+  }
+  100% {
+    box-shadow: 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6;
+  }
+}
+.morph-btn {
+  background: #f39c12;
+  color: white;
+  width: 120px;
+  transition: all 0.5s ease;
+}
+
+.morph-text,
+.morph-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.morph-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.morph-btn:hover {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #27ae60;
+}
+
+.morph-btn:hover .morph-text {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.morph-btn:hover .morph-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.flip3d-btn {
+  background: #34495e;
+  color: white;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  transition: all 0.6s ease;
+}
+
+.flip-back {
+  transform: translate(-50%, -50%) rotateX(180deg);
+}
+
+.flip3d-btn:hover {
+  transform: rotateX(180deg);
+}
+
+.elastic-btn {
+  background: #e67e22;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.elastic-btn:hover {
+  transform: scale(1.2);
+  background: #d35400;
+}
+
+.elastic-btn:active {
+  transform: scale(0.95);
+}
+
+.neon-border-btn {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  position: relative;
+}
+
+.neon-border-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.neon-border-btn:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+}
+
+.neon-border-btn:hover {
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: inset 0 0 5px #00ffff, inset 0 0 10px #00ffff;
+}
+
+.particle-btn {
+  background: #8e44ad;
+  color: white;
+  position: relative;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 20%;
+}
+
+.particle-2 {
+  top: 20%;
+  right: 20%;
+}
+
+.particle-3 {
+  bottom: 20%;
+  left: 20%;
+}
+
+.particle-4 {
+  bottom: 20%;
+  right: 20%;
+}
+
+.particle-5 {
+  top: 50%;
+  left: 50%;
+}
+
+.particle-btn:hover .particle {
+  opacity: 1;
+  animation: particle-explode 0.6s ease-out;
+}
+
+@keyframes particle-explode {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x, 0), var(--y, 0)) scale(1);
+    opacity: 0;
+  }
+}
+.particle-btn:hover .particle-1 {
+  --x: -30px;
+  --y: -30px;
+}
+
+.particle-btn:hover .particle-2 {
+  --x: 30px;
+  --y: -30px;
+}
+
+.particle-btn:hover .particle-3 {
+  --x: -30px;
+  --y: 30px;
+}
+
+.particle-btn:hover .particle-4 {
+  --x: 30px;
+  --y: 30px;
+}
+
+.particle-btn:hover .particle-5 {
+  --x: 0px;
+  --y: -40px;
+}
+
+.slide-bg-btn {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  position: relative;
+  background-size: 200% 200%;
+  transition: background-position 0.3s ease;
+}
+
+.slide-bg-btn:hover {
+  background-position: 100% 100%;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.shimmer-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.shimmer-btn:hover::before {
+  left: 100%;
+}
+
+.loading-btn {
+  background: #2c3e50;
+  color: white;
+  position: relative;
+  min-width: 120px;
+}
+
+.loading-text,
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 1s linear infinite;
+}
+
+.loading-btn:hover .loading-text {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.loading-btn:hover .loading-spinner {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.back-link {
+  margin-top: 3rem;
+}
+
+.back-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.back-link a:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .buttons-gallery-title {
+    font-size: 2rem;
+  }
+  .buttons-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .button-item {
+    height: 180px;
+  }
+  .demo-area {
+    height: 100px;
+  }
+}
